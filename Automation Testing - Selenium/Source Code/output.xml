@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.8 on win32)" generated="20231227 16:26:17.494" rpa="false" schemaversion="2">
+<suite id="s1" name="RobotAMS" source="E:\Winosa\Robot AMS\tests\RobotAMS.robot">
+<test id="s1-t1" name="MasterJenisPJK">
+<kw name="CheckPajak" library="Pages">
+<kw name="OpenWebBrowser" library="Functions">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${WebBrowser}' in ['Chrome','firefox']</arg>
+<arg>Open Browser</arg>
+<arg>${HomePage}</arg>
+<arg>${WebBrowser}</arg>
+<arg>options=add_argument( "${HeadStatus}"); add_argument( "${WindowSize}" )</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${HomePage}</arg>
+<arg>${WebBrowser}</arg>
+<arg>options=add_argument( "${HeadStatus}"); add_argument( "${WindowSize}" )</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231227 16:26:17.952" level="INFO">Opening browser 'Chrome' to base url 'https://app11.winosa.id/'.</msg>
+<status status="PASS" starttime="20231227 16:26:17.952" endtime="20231227 16:26:20.831"/>
+</kw>
+<status status="PASS" starttime="20231227 16:26:17.951" endtime="20231227 16:26:20.831"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${WebBrowser}' in ['edge','safari','Opera']</arg>
+<arg>Open Browser</arg>
+<arg>${HomePage}</arg>
+<arg>${WebBrowser}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20231227 16:26:20.831" endtime="20231227 16:26:20.831"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231227 16:26:20.831" endtime="20231227 16:26:20.954"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Opened the browser successfully</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231227 16:26:20.955" level="INFO">Opened the browser successfully</msg>
+<status status="PASS" starttime="20231227 16:26:20.954" endtime="20231227 16:26:20.955"/>
+</kw>
+<status status="PASS" starttime="20231227 16:26:17.951" endtime="20231227 16:26:20.955"/>
+</kw>
+<kw name="LoginCaseTrue" library="Subpages">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//form//h3[@class="text-center"][contains(.,"Selamat Datang Kembali")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:20.956" endtime="20231227 16:26:20.982"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//input[@placeholder="Username"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:20.982" endtime="20231227 16:26:21.006"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@placeholder="Username"]</arg>
+<arg>${Uname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 16:26:21.007" level="INFO">Typing text 'admin' into text field '//input[@placeholder="Username"]'.</msg>
+<status status="PASS" starttime="20231227 16:26:21.007" endtime="20231227 16:26:21.109"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//input[@placeholder="Password"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:21.109" endtime="20231227 16:26:21.131"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@placeholder="Password"]</arg>
+<arg>${Pwd}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 16:26:21.132" level="INFO">Typing text 'pass4WMS' into text field '//input[@placeholder="Password"]'.</msg>
+<status status="PASS" starttime="20231227 16:26:21.131" endtime="20231227 16:26:21.221"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//button[@class="btn btn-ams w-100 px-4 mt-2"][contains(.,"Masuk")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:21.221" endtime="20231227 16:26:21.238"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//button[@class="btn btn-ams w-100 px-4 mt-2"][contains(.,"Masuk")]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231227 16:26:21.238" level="INFO">Clicking button '//button[@class="btn btn-ams w-100 px-4 mt-2"][contains(.,"Masuk")]'.</msg>
+<status status="PASS" starttime="20231227 16:26:21.238" endtime="20231227 16:26:21.286"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//a[@class="active nav-link"]</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:21.287" endtime="20231227 16:26:22.370"/>
+</kw>
+<status status="PASS" starttime="20231227 16:26:20.955" endtime="20231227 16:26:22.370"/>
+</kw>
+<kw name="CheckChasePajak" library="Subpages">
+<kw name="InputJenisPJK" library="Subpages">
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1920</arg>
+<arg>1080</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20231227 16:26:22.371" endtime="20231227 16:26:22.631"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>//a[@href="/master-data/account/list"]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231227 16:26:22.631" endtime="20231227 16:26:22.969"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//a[@href="/master-data/tax-types/list"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:22.969" endtime="20231227 16:26:23.006"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[@href="/master-data/tax-types/list"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 16:26:23.006" level="INFO">Clicking element '//a[@href="/master-data/tax-types/list"]'.</msg>
+<status status="PASS" starttime="20231227 16:26:23.006" endtime="20231227 16:26:23.267"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${BtnTambah}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:23.267" endtime="20231227 16:26:23.292"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BtnTambah}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 16:26:23.292" level="INFO">Clicking element '//button[@class="btn btn-primary float-end"]'.</msg>
+<status status="PASS" starttime="20231227 16:26:23.292" endtime="20231227 16:26:23.339"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//h5[@class="modal-title"][contains(.,"Tambah Jenis Pajak")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:23.339" endtime="20231227 16:26:23.364"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Name}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:23.365" endtime="20231227 16:26:23.385"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Name}</arg>
+<arg>PPN 40</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 16:26:23.386" level="INFO">Typing text 'PPN 40' into text field '//input[@id="name"]'.</msg>
+<status status="PASS" starttime="20231227 16:26:23.385" endtime="20231227 16:26:23.465"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//input[@id="percentage"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:23.466" endtime="20231227 16:26:23.488"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="percentage"]</arg>
+<arg>40</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 16:26:23.488" level="INFO">Typing text '40' into text field '//input[@id="percentage"]'.</msg>
+<status status="PASS" starttime="20231227 16:26:23.488" endtime="20231227 16:26:23.590"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//input[@class="vs__search"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:23.590" endtime="20231227 16:26:23.618"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@class="vs__search"]</arg>
+<arg>lain</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 16:26:23.619" level="INFO">Typing text 'lain' into text field '//input[@class="vs__search"]'.</msg>
+<status status="PASS" starttime="20231227 16:26:23.619" endtime="20231227 16:26:23.702"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//li[contains(.,"Lainnya")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:23.702" endtime="20231227 16:26:24.596"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//li[contains(.,"Lainnya")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 16:26:24.597" level="INFO">Clicking element '//li[contains(.,"Lainnya")]'.</msg>
+<status status="PASS" starttime="20231227 16:26:24.597" endtime="20231227 16:26:24.816"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Deskripsi}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:24.817" endtime="20231227 16:26:24.843"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Deskripsi}</arg>
+<arg>PPN 40%</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 16:26:24.843" level="INFO">Typing text 'PPN 40%' into text field '//textarea[@id="description"]'.</msg>
+<status status="PASS" starttime="20231227 16:26:24.843" endtime="20231227 16:26:24.909"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${BtnSimpan}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:24.910" endtime="20231227 16:26:24.930"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BtnSimpan}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 16:26:24.930" level="INFO">Clicking element '//button[@class="btn btn-primary"]'.</msg>
+<status status="PASS" starttime="20231227 16:26:24.930" endtime="20231227 16:26:24.968"/>
+</kw>
+<kw name="CheckProggresBar" library="Subpages">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${present0}</var>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>${Global_ToastSuccess}</arg>
+<arg>timeout=8s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${Global_ToastSuccess}</arg>
+<arg>timeout=8s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20231227 16:26:24.969" endtime="20231227 16:26:27.020"/>
+</kw>
+<msg timestamp="20231227 16:26:27.021" level="INFO">${present0} = True</msg>
+<status status="PASS" starttime="20231227 16:26:24.968" endtime="20231227 16:26:27.021"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${present0}</arg>
+<arg>Log</arg>
+<arg>Loader Not Visible</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>Loader Visible</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Loader Not Visible</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231227 16:26:27.022" level="INFO">Loader Not Visible</msg>
+<status status="PASS" starttime="20231227 16:26:27.022" endtime="20231227 16:26:27.023"/>
+</kw>
+<status status="PASS" starttime="20231227 16:26:27.021" endtime="20231227 16:26:27.023"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${present0}</var>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>${Global_ToastUpdate }</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${Global_ToastUpdate }</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20231227 16:26:27.024" endtime="20231227 16:26:29.082"/>
+</kw>
+<msg timestamp="20231227 16:26:29.082" level="INFO">${present0} = True</msg>
+<status status="PASS" starttime="20231227 16:26:27.023" endtime="20231227 16:26:29.082"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${present0}</arg>
+<arg>Log</arg>
+<arg>Loader App Not Visible</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>Loader App Visible</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Loader App Not Visible</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231227 16:26:29.085" level="INFO">Loader App Not Visible</msg>
+<status status="PASS" starttime="20231227 16:26:29.084" endtime="20231227 16:26:29.085"/>
+</kw>
+<status status="PASS" starttime="20231227 16:26:29.084" endtime="20231227 16:26:29.085"/>
+</kw>
+<status status="PASS" starttime="20231227 16:26:24.968" endtime="20231227 16:26:29.085"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//strong[contains(.,"PPN 40")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:29.085" endtime="20231227 16:26:29.112"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//tr[contains(.,"PPN 40")]//td[contains(.,"40.00%")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:29.112" endtime="20231227 16:26:29.130"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//tr[contains(.,"PPN 40")]//td[contains(.,"Lainnya")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:29.130" endtime="20231227 16:26:29.146"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//tr[contains(.,"PPN 40")]//td[contains(.,"PPN 40")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:29.147" endtime="20231227 16:26:29.163"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//tr[contains(.,"PPN 40")]//button[@class="btn btn-link"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:29.163" endtime="20231227 16:26:29.180"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//tr[contains(.,"PPN 40")]//button[@class="btn btn-link"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 16:26:29.181" level="INFO">Clicking element '//tr[contains(.,"PPN 40")]//button[@class="btn btn-link"]'.</msg>
+<status status="PASS" starttime="20231227 16:26:29.180" endtime="20231227 16:26:29.222"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//tr[contains(.,"PPN 40")]//a[@class="dropdown-item"][contains(.,"Edit")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:29.222" endtime="20231227 16:26:29.245"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//tr[contains(.,"PPN 40")]//a[@class="dropdown-item"][contains(.,"Edit")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 16:26:29.245" level="INFO">Clicking element '//tr[contains(.,"PPN 40")]//a[@class="dropdown-item"][contains(.,"Edit")]'.</msg>
+<status status="PASS" starttime="20231227 16:26:29.245" endtime="20231227 16:26:29.293"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//h5[@class="modal-title"][contains(.,"Ubah Jenis Pajak")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:29.294" endtime="20231227 16:26:29.317"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Name}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:29.317" endtime="20231227 16:26:29.333"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${Name}</arg>
+<arg>CTRL+A+DELETE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231227 16:26:29.333" level="INFO">Sending key(s) ('CTRL+A+DELETE',) to //input[@id="name"] element.</msg>
+<msg timestamp="20231227 16:26:29.611" level="INFO">Pressing special key CONTROL down.</msg>
+<msg timestamp="20231227 16:26:29.611" level="INFO">Sending key A</msg>
+<msg timestamp="20231227 16:26:29.612" level="INFO">Pressing special key DELETE down.</msg>
+<msg timestamp="20231227 16:26:29.612" level="INFO">Releasing special key CONTROL.</msg>
+<msg timestamp="20231227 16:26:29.612" level="INFO">Releasing special key DELETE.</msg>
+<status status="PASS" starttime="20231227 16:26:29.333" endtime="20231227 16:26:29.623"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 16:26:30.625" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20231227 16:26:29.623" endtime="20231227 16:26:30.625"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Name}</arg>
+<arg>PPN 50</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 16:26:30.627" level="INFO">Typing text 'PPN 50' into text field '//input[@id="name"]'.</msg>
+<status status="PASS" starttime="20231227 16:26:30.626" endtime="20231227 16:26:30.718"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//input[@id="percentage"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:30.718" endtime="20231227 16:26:30.734"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 16:26:31.749" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20231227 16:26:30.734" endtime="20231227 16:26:31.749"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>//input[@id="percentage"]</arg>
+<arg>CTRL+A+DELETE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231227 16:26:31.751" level="INFO">Sending key(s) ('CTRL+A+DELETE',) to //input[@id="percentage"] element.</msg>
+<msg timestamp="20231227 16:26:32.054" level="INFO">Pressing special key CONTROL down.</msg>
+<msg timestamp="20231227 16:26:32.054" level="INFO">Sending key A</msg>
+<msg timestamp="20231227 16:26:32.054" level="INFO">Pressing special key DELETE down.</msg>
+<msg timestamp="20231227 16:26:32.054" level="INFO">Releasing special key CONTROL.</msg>
+<msg timestamp="20231227 16:26:32.054" level="INFO">Releasing special key DELETE.</msg>
+<status status="PASS" starttime="20231227 16:26:31.749" endtime="20231227 16:26:32.064"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 16:26:33.072" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20231227 16:26:32.064" endtime="20231227 16:26:33.072"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="percentage"]</arg>
+<arg>50</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 16:26:33.074" level="INFO">Typing text '50' into text field '//input[@id="percentage"]'.</msg>
+<status status="PASS" starttime="20231227 16:26:33.073" endtime="20231227 16:26:33.144"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//input[@class="vs__search"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:33.144" endtime="20231227 16:26:33.160"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@class="vs__search"]</arg>
+<arg>lain</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 16:26:33.160" level="INFO">Typing text 'lain' into text field '//input[@class="vs__search"]'.</msg>
+<status status="PASS" starttime="20231227 16:26:33.160" endtime="20231227 16:26:33.230"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 16:26:34.238" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20231227 16:26:33.230" endtime="20231227 16:26:34.238"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//li[contains(.,"Lain-lain")]</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:34.239" endtime="20231227 16:26:34.274"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//li[contains(.,"Lain-lain")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 16:26:34.274" level="INFO">Clicking element '//li[contains(.,"Lain-lain")]'.</msg>
+<status status="PASS" starttime="20231227 16:26:34.274" endtime="20231227 16:26:34.317"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Deskripsi}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:34.318" endtime="20231227 16:26:34.332"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${Deskripsi}</arg>
+<arg>CTRL+A+DELETE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231227 16:26:34.333" level="INFO">Sending key(s) ('CTRL+A+DELETE',) to //textarea[@id="description"] element.</msg>
+<msg timestamp="20231227 16:26:34.620" level="INFO">Pressing special key CONTROL down.</msg>
+<msg timestamp="20231227 16:26:34.620" level="INFO">Sending key A</msg>
+<msg timestamp="20231227 16:26:34.620" level="INFO">Pressing special key DELETE down.</msg>
+<msg timestamp="20231227 16:26:34.621" level="INFO">Releasing special key CONTROL.</msg>
+<msg timestamp="20231227 16:26:34.621" level="INFO">Releasing special key DELETE.</msg>
+<status status="PASS" starttime="20231227 16:26:34.332" endtime="20231227 16:26:34.630"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 16:26:35.635" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20231227 16:26:34.630" endtime="20231227 16:26:35.635"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Deskripsi}</arg>
+<arg>PPN 50%</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 16:26:35.637" level="INFO">Typing text 'PPN 50%' into text field '//textarea[@id="description"]'.</msg>
+<status status="PASS" starttime="20231227 16:26:35.636" endtime="20231227 16:26:35.686"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${BtnSimpan}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:35.686" endtime="20231227 16:26:35.701"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BtnSimpan}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 16:26:35.702" level="INFO">Clicking element '//button[@class="btn btn-primary"]'.</msg>
+<status status="PASS" starttime="20231227 16:26:35.701" endtime="20231227 16:26:35.730"/>
+</kw>
+<kw name="CheckProggresBar" library="Subpages">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${present0}</var>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>${Global_ToastSuccess}</arg>
+<arg>timeout=8s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${Global_ToastSuccess}</arg>
+<arg>timeout=8s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20231227 16:26:35.731" endtime="20231227 16:26:37.739"/>
+</kw>
+<msg timestamp="20231227 16:26:37.739" level="INFO">${present0} = True</msg>
+<status status="PASS" starttime="20231227 16:26:35.731" endtime="20231227 16:26:37.739"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${present0}</arg>
+<arg>Log</arg>
+<arg>Loader Not Visible</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>Loader Visible</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Loader Not Visible</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231227 16:26:37.740" level="INFO">Loader Not Visible</msg>
+<status status="PASS" starttime="20231227 16:26:37.740" endtime="20231227 16:26:37.740"/>
+</kw>
+<status status="PASS" starttime="20231227 16:26:37.739" endtime="20231227 16:26:37.740"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${present0}</var>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>${Global_ToastUpdate }</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${Global_ToastUpdate }</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20231227 16:26:37.740" endtime="20231227 16:26:39.803"/>
+</kw>
+<msg timestamp="20231227 16:26:39.803" level="INFO">${present0} = True</msg>
+<status status="PASS" starttime="20231227 16:26:37.740" endtime="20231227 16:26:39.803"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${present0}</arg>
+<arg>Log</arg>
+<arg>Loader App Not Visible</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>Loader App Visible</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Loader App Not Visible</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231227 16:26:39.804" level="INFO">Loader App Not Visible</msg>
+<status status="PASS" starttime="20231227 16:26:39.804" endtime="20231227 16:26:39.804"/>
+</kw>
+<status status="PASS" starttime="20231227 16:26:39.804" endtime="20231227 16:26:39.804"/>
+</kw>
+<status status="PASS" starttime="20231227 16:26:35.730" endtime="20231227 16:26:39.804"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//strong[contains(.,"PPN 50")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:39.804" endtime="20231227 16:26:39.823"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//tr[contains(.,"PPN 50")]//td[contains(.,"50.00%")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:39.823" endtime="20231227 16:26:39.843"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//tr[contains(.,"PPN 50")]//td[contains(.,"Lain-lain")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:39.843" endtime="20231227 16:26:39.861"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//tr[contains(.,"PPN 50")]//td[contains(.,"PPN 50%")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:39.861" endtime="20231227 16:26:39.879"/>
+</kw>
+<status status="PASS" starttime="20231227 16:26:22.371" endtime="20231227 16:26:39.880"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//tr[contains(.,"PPN 50")]//button[@class="btn btn-link"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:39.880" endtime="20231227 16:26:39.899"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//tr[contains(.,"PPN 50")]//button[@class="btn btn-link"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 16:26:39.899" level="INFO">Clicking element '//tr[contains(.,"PPN 50")]//button[@class="btn btn-link"]'.</msg>
+<status status="PASS" starttime="20231227 16:26:39.899" endtime="20231227 16:26:39.937"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//tr[contains(.,"PPN 50")]//a[@class="dropdown-item"][contains(.,"Hapus")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:39.937" endtime="20231227 16:26:39.958"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//tr[contains(.,"PPN 50")]//a[@class="dropdown-item"][contains(.,"Hapus")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 16:26:39.958" level="INFO">Clicking element '//tr[contains(.,"PPN 50")]//a[@class="dropdown-item"][contains(.,"Hapus")]'.</msg>
+<status status="PASS" starttime="20231227 16:26:39.958" endtime="20231227 16:26:39.998"/>
+</kw>
+<kw name="ButtonOK" library="Subpages">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${OKE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231227 16:26:39.999" endtime="20231227 16:26:40.022"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${OKE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 16:26:40.022" level="INFO">Clicking element '//button[@class="btn btn-danger"][contains(.,"Oke")]'.</msg>
+<status status="PASS" starttime="20231227 16:26:40.022" endtime="20231227 16:26:40.058"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>//span[@class="modal-header"]</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20231227 16:26:40.059" endtime="20231227 16:26:42.523"/>
+</kw>
+<status status="PASS" starttime="20231227 16:26:39.998" endtime="20231227 16:26:42.523"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 16:26:43.532" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20231227 16:26:42.523" endtime="20231227 16:26:43.532"/>
+</kw>
+<status status="PASS" starttime="20231227 16:26:22.370" endtime="20231227 16:26:43.533"/>
+</kw>
+<status status="PASS" starttime="20231227 16:26:17.951" endtime="20231227 16:26:43.533"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20231227 16:26:43.535" endtime="20231227 16:26:45.787"/>
+</kw>
+<status status="PASS" starttime="20231227 16:26:17.950" endtime="20231227 16:26:45.789"/>
+</test>
+<status status="PASS" starttime="20231227 16:26:17.496" endtime="20231227 16:26:45.794"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="RobotAMS">RobotAMS</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
