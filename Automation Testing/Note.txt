@@ -1,0 +1,4 @@
+username and password must use a personal account (mapclub) 
+and input the username & password mapclub in the source code, 
+for e-commerce scenario tests if you want to run automation
+tests from source code
