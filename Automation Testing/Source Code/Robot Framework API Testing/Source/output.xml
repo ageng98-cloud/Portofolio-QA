@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.9.8 on win32)" generated="2024-02-27T12:27:09.150471" rpa="false" schemaversion="5">
+<suite id="s1" name="API" source="E:\Robot Framework API Testing\Source\API.robot">
+<test id="s1-t1" name="MethodGET" line="22">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-02-27T12:27:09.270182" level="INFO">Creating Session using : alias=Base, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>Base</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-02-27T12:27:09.270182" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-02-27T12:27:09.271147" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Content-Type</arg>
+<arg>application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-02-27T12:27:09.271147" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-02-27T12:27:09.511056" level="INFO">GET Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '83'} 
+ body={"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver"} 
+ </msg>
+<msg time="2024-02-27T12:27:09.512053" level="INFO">GET Response : url=https://reqres.in/api/users 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 27 Feb 2024 05:27:10 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1708685626&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=4kI8MmM1QWcOfCrsKEKhsJzF5kQA28lbVdom3Pq3BhY%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1708685626&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=4kI8MmM1QWcOfCrsKEKhsJzF5kQA28lbVdom3Pq3BhY%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"3e4-2RLXvr5wTg9YQ6aH95CkYoFNuO8"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '873', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '85be04655ad44aca-CGK', 'Content-Encoding': 'gzip'} 
+ body={"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://reqres.in/img/faces/3-image.jpg"},{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://reqres.in/img/faces/4-image.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://reqres.in/img/faces/5-image.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://reqres.in/img/faces/6-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg time="2024-02-27T12:27:09.513051" level="INFO">C:\Users\ACER\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg time="2024-02-27T12:27:09.516043" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>Base</arg>
+<arg>/api/users</arg>
+<arg>headers=${headers}</arg>
+<arg>data=${payload}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-02-27T12:27:09.271147" elapsed="0.244896"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-27T12:27:09.520031" level="INFO">200</msg>
+<arg>${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-27T12:27:09.518037" elapsed="0.002992"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-27T12:27:09.524019" level="INFO">{'page': 1, 'per_page': 6, 'total': 12, 'total_pages': 2, 'data': [{'id': 1, 'email': 'george.bluth@reqres.in', 'first_name': 'George', 'last_name': 'Bluth', 'avatar': 'https://reqres.in/img/faces/1-image.jpg'}, {'id': 2, 'email': 'janet.weaver@reqres.in', 'first_name': 'Janet', 'last_name': 'Weaver', 'avatar': 'https://reqres.in/img/faces/2-image.jpg'}, {'id': 3, 'email': 'emma.wong@reqres.in', 'first_name': 'Emma', 'last_name': 'Wong', 'avatar': 'https://reqres.in/img/faces/3-image.jpg'}, {'id': 4, 'email': 'eve.holt@reqres.in', 'first_name': 'Eve', 'last_name': 'Holt', 'avatar': 'https://reqres.in/img/faces/4-image.jpg'}, {'id': 5, 'email': 'charles.morris@reqres.in', 'first_name': 'Charles', 'last_name': 'Morris', 'avatar': 'https://reqres.in/img/faces/5-image.jpg'}, {'id': 6, 'email': 'tracey.ramos@reqres.in', 'first_name': 'Tracey', 'last_name': 'Ramos', 'avatar': 'https://reqres.in/img/faces/6-image.jpg'}], 'support': {'url': 'https://reqres.in/#support-heading', 'text': 'To keep ReqRes free, contributions towards server costs are appreciated!'}}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-27T12:27:09.522025" elapsed="0.002993"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-02-27T12:27:09.529049" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-02-27T12:27:09.526015" elapsed="0.003034"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-27T12:27:09.531006" level="INFO">${json_response} = {'page': 1, 'per_page': 6, 'total': 12, 'total_pages': 2, 'data': [{'id': 1, 'email': 'george.bluth@reqres.in', 'first_name': 'George', 'last_name': 'Bluth', 'avatar': 'https://reqres.in/img/faces/1-i...</msg>
+<var>${json_response}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-27T12:27:09.530006" elapsed="0.001000"/>
+</kw>
+<kw name="Delete All Sessions" owner="RequestsLibrary">
+<msg time="2024-02-27T12:27:09.532003" level="INFO">Deleting All Sessions</msg>
+<doc>Removes all the session objects</doc>
+<status status="PASS" start="2024-02-27T12:27:09.532003" elapsed="0.005980"/>
+</kw>
+<doc>Test GET request to the API</doc>
+<status status="PASS" start="2024-02-27T12:27:09.269152" elapsed="0.270826"/>
+</test>
+<test id="s1-t2" name="Method-GETPer-ID" line="39">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-02-27T12:27:09.543966" level="INFO">Creating Session using : alias=Base, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>Base</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-02-27T12:27:09.542969" elapsed="0.002027"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-02-27T12:27:09.545698" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Content-Type</arg>
+<arg>application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-02-27T12:27:09.545698" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-02-27T12:27:09.729579" level="INFO">GET Request : url=https://reqres.in/api/users/1 
+ path_url=/api/users/1 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '83'} 
+ body={"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver"} 
+ </msg>
+<msg time="2024-02-27T12:27:09.729579" level="INFO">GET Response : url=https://reqres.in/api/users/1 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 27 Feb 2024 05:27:11 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1700514010&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=fX8Mj8fxzkMMHIbbNrBLdfTojcOVk7diGpQ6ciiBok8%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1700514010&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=fX8Mj8fxzkMMHIbbNrBLdfTojcOVk7diGpQ6ciiBok8%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"118-P3iKcVpIgCj9HqYeOOrGLX8qJVc"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '4793', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '85be0466bdfd4abb-CGK', 'Content-Encoding': 'gzip'} 
+ body={"data":{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg time="2024-02-27T12:27:09.729579" level="INFO">C:\Users\ACER\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg time="2024-02-27T12:27:09.730582" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>Base</arg>
+<arg>/api/users/1</arg>
+<arg>headers=${headers}</arg>
+<arg>data=${payload}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-02-27T12:27:09.546867" elapsed="0.183715"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-27T12:27:09.732661" level="INFO">200</msg>
+<arg>${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-27T12:27:09.731661" elapsed="0.001000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-27T12:27:09.733220" level="INFO">{'data': {'id': 1, 'email': 'george.bluth@reqres.in', 'first_name': 'George', 'last_name': 'Bluth', 'avatar': 'https://reqres.in/img/faces/1-image.jpg'}, 'support': {'url': 'https://reqres.in/#support-heading', 'text': 'To keep ReqRes free, contributions towards server costs are appreciated!'}}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-27T12:27:09.733220" elapsed="0.001007"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-02-27T12:27:09.734672" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-02-27T12:27:09.734672" elapsed="0.001000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-27T12:27:09.737057" level="INFO">${json_response} = {'data': {'id': 1, 'email': 'george.bluth@reqres.in', 'first_name': 'George', 'last_name': 'Bluth', 'avatar': 'https://reqres.in/img/faces/1-image.jpg'}, 'support': {'url': 'https://reqres.in/#support...</msg>
+<var>${json_response}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-27T12:27:09.736057" elapsed="0.001000"/>
+</kw>
+<kw name="Delete All Sessions" owner="RequestsLibrary">
+<msg time="2024-02-27T12:27:09.737511" level="INFO">Deleting All Sessions</msg>
+<doc>Removes all the session objects</doc>
+<status status="PASS" start="2024-02-27T12:27:09.737511" elapsed="0.003995"/>
+</kw>
+<doc>Test GET request to the API</doc>
+<status status="PASS" start="2024-02-27T12:27:09.541978" elapsed="0.200524"/>
+</test>
+<test id="s1-t3" name="Method-POST-PositiveCase" line="56">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-02-27T12:27:09.744496" level="INFO">Creating Session using : alias=Base, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>Base</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-02-27T12:27:09.744496" elapsed="0.000996"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-02-27T12:27:09.745857" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Content-Type</arg>
+<arg>application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-02-27T12:27:09.745857" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-02-27T12:27:10.497186" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '83'} 
+ body={"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver"} 
+ </msg>
+<msg time="2024-02-27T12:27:10.497186" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Tue, 27 Feb 2024 05:27:11 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '122', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1709011631&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=MXgwCPUw0tuhFBbSgeoBuG2gS%2Fju9l%2FW7F282AKNVPk%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1709011631&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=MXgwCPUw0tuhFBbSgeoBuG2gS%2Fju9l%2FW7F282AKNVPk%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"7a-T89Glo+kPH4PpaWoT8BAP3WdPZE"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '85be0467fb116d1e-CGK'} 
+ body={"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","createdAt":"2024-02-27T05:27:11.647Z"} 
+ </msg>
+<msg time="2024-02-27T12:27:10.498183" level="INFO">C:\Users\ACER\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg time="2024-02-27T12:27:10.499182" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>Base</arg>
+<arg>/api/users</arg>
+<arg>headers=${headers}</arg>
+<arg>data=${payload}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-02-27T12:27:09.746743" elapsed="0.752439"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-27T12:27:10.501174" level="INFO">201</msg>
+<arg>${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-27T12:27:10.500177" elapsed="0.000997"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-27T12:27:10.502173" level="INFO">{'id': 2, 'email': 'janet.weaver@reqres.in', 'first_name': 'Janet', 'last_name': 'Weaver', 'createdAt': '2024-02-27T05:27:11.647Z'}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-27T12:27:10.502173" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-02-27T12:27:10.504196" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-02-27T12:27:10.503198" elapsed="0.000998"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-27T12:27:10.505166" level="INFO">${json_response} = {'id': 2, 'email': 'janet.weaver@reqres.in', 'first_name': 'Janet', 'last_name': 'Weaver', 'createdAt': '2024-02-27T05:27:11.647Z'}</msg>
+<var>${json_response}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-27T12:27:10.505166" elapsed="0.000000"/>
+</kw>
+<kw name="Delete All Sessions" owner="RequestsLibrary">
+<msg time="2024-02-27T12:27:10.506162" level="INFO">Deleting All Sessions</msg>
+<doc>Removes all the session objects</doc>
+<status status="PASS" start="2024-02-27T12:27:10.506162" elapsed="0.003990"/>
+</kw>
+<doc>Test POST request to the API</doc>
+<status status="PASS" start="2024-02-27T12:27:09.743501" elapsed="0.766651"/>
+</test>
+<test id="s1-t4" name="Method-PUT-PositiveCase" line="73">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-02-27T12:27:10.514142" level="INFO">Creating Session using : alias=Base, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>Base</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-02-27T12:27:10.513147" elapsed="0.000995"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-02-27T12:27:10.515137" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Content-Type</arg>
+<arg>application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-02-27T12:27:10.514142" elapsed="0.000995"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2024-02-27T12:27:11.084012" level="INFO">PUT Request : url=https://reqres.in/api/users/1 
+ path_url=/api/users/1 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '83'} 
+ body={"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver"} 
+ </msg>
+<msg time="2024-02-27T12:27:11.084012" level="INFO">PUT Response : url=https://reqres.in/api/users/1 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 27 Feb 2024 05:27:12 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1709011632&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=90ZYQEHHbp8IAtCMiDS0hR6oeD8DsFm6k4b3DUZljIs%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1709011632&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=90ZYQEHHbp8IAtCMiDS0hR6oeD8DsFm6k4b3DUZljIs%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"7a-wpZUJqORLVZ9Xo4sLFfZjNE4d5Q"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '85be046cab873555-CGK', 'Content-Encoding': 'gzip'} 
+ body={"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","updatedAt":"2024-02-27T05:27:12.406Z"} 
+ </msg>
+<msg time="2024-02-27T12:27:11.085006" level="INFO">C:\Users\ACER\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg time="2024-02-27T12:27:11.086000" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>Base</arg>
+<arg>/api/users/1</arg>
+<arg>headers=${headers}</arg>
+<arg>data=${payload}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-02-27T12:27:10.515137" elapsed="0.570863"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-27T12:27:11.086580" level="INFO">200</msg>
+<arg>${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-27T12:27:11.086580" elapsed="0.001000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-27T12:27:11.088577" level="INFO">{'id': 2, 'email': 'janet.weaver@reqres.in', 'first_name': 'Janet', 'last_name': 'Weaver', 'updatedAt': '2024-02-27T05:27:12.406Z'}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-27T12:27:11.087580" elapsed="0.000997"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-02-27T12:27:11.089575" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-02-27T12:27:11.088577" elapsed="0.000998"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-27T12:27:11.090572" level="INFO">${json_response} = {'id': 2, 'email': 'janet.weaver@reqres.in', 'first_name': 'Janet', 'last_name': 'Weaver', 'updatedAt': '2024-02-27T05:27:12.406Z'}</msg>
+<var>${json_response}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-27T12:27:11.090572" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-27T12:27:11.092567" level="INFO">${field_id} = 2</msg>
+<var>${field_id}</var>
+<arg>${json_response['id']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-27T12:27:11.091569" elapsed="0.000998"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-27T12:27:11.093060" level="INFO">${field_email} = janet.weaver@reqres.in</msg>
+<var>${field_email}</var>
+<arg>${json_response['email']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-27T12:27:11.093060" elapsed="0.001031"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-27T12:27:11.095120" level="INFO">${field_first} = Janet</msg>
+<var>${field_first}</var>
+<arg>${json_response['first_name']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-27T12:27:11.094091" elapsed="0.001029"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-27T12:27:11.095998" level="INFO">${field_last} = Weaver</msg>
+<var>${field_last}</var>
+<arg>${json_response['last_name']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-27T12:27:11.095998" elapsed="0.001000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-02-27T12:27:11.096998" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${field_id}</arg>
+<arg>${EXPECTED_id}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-02-27T12:27:11.096998" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${field_email}</arg>
+<arg>${EXPECTED_email}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-02-27T12:27:11.097996" elapsed="0.000997"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${field_first}</arg>
+<arg>${EXPECTED_first_name}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-02-27T12:27:11.098993" elapsed="0.001000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${field_last}</arg>
+<arg>${EXPECTED_last_name}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-02-27T12:27:11.100989" elapsed="0.000000"/>
+</kw>
+<kw name="Delete All Sessions" owner="RequestsLibrary">
+<msg time="2024-02-27T12:27:11.101987" level="INFO">Deleting All Sessions</msg>
+<doc>Removes all the session objects</doc>
+<status status="PASS" start="2024-02-27T12:27:11.101987" elapsed="0.003987"/>
+</kw>
+<doc>Test POST request to the API</doc>
+<status status="PASS" start="2024-02-27T12:27:10.512146" elapsed="0.594664"/>
+</test>
+<test id="s1-t5" name="Method-POST-Case-Missing-Request-Body-Fields" line="101">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-02-27T12:27:11.109805" level="INFO">Creating Session using : alias=Base, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>Base</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-02-27T12:27:11.109805" elapsed="0.000998"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-02-27T12:27:11.111800" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Content-Type</arg>
+<arg>application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-02-27T12:27:11.110803" elapsed="0.000997"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-02-27T12:27:11.775952" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '62'} 
+ body={"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet"} 
+ </msg>
+<msg time="2024-02-27T12:27:11.776993" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Tue, 27 Feb 2024 05:27:13 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '101', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1709011632&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=90ZYQEHHbp8IAtCMiDS0hR6oeD8DsFm6k4b3DUZljIs%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1709011632&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=90ZYQEHHbp8IAtCMiDS0hR6oeD8DsFm6k4b3DUZljIs%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"65-GD8exn4V6YpZl50uiXr2YkbLGnk"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '85be04707a484ab6-CGK'} 
+ body={"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","createdAt":"2024-02-27T05:27:13.004Z"} 
+ </msg>
+<msg time="2024-02-27T12:27:11.776993" level="INFO">C:\Users\ACER\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg time="2024-02-27T12:27:11.780951" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>Base</arg>
+<arg>/api/users</arg>
+<arg>headers=${headers}</arg>
+<arg>data=${payload2}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-02-27T12:27:11.111800" elapsed="0.669151"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-27T12:27:11.785443" level="INFO">201</msg>
+<arg>${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-27T12:27:11.782442" elapsed="0.003001"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-27T12:27:11.789104" level="INFO">{'id': 2, 'email': 'janet.weaver@reqres.in', 'first_name': 'Janet', 'createdAt': '2024-02-27T05:27:13.004Z'}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-27T12:27:11.787102" elapsed="0.003000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-02-27T12:27:11.792902" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-02-27T12:27:11.790845" elapsed="0.002057"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-27T12:27:11.795889" level="INFO">${json_response} = {'id': 2, 'email': 'janet.weaver@reqres.in', 'first_name': 'Janet', 'createdAt': '2024-02-27T05:27:13.004Z'}</msg>
+<var>${json_response}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-27T12:27:11.793852" elapsed="0.002037"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-27T12:27:11.797841" level="INFO">${field_id} = 2</msg>
+<var>${field_id}</var>
+<arg>${json_response['id']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-27T12:27:11.796845" elapsed="0.001994"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-27T12:27:11.800836" level="INFO">${field_email} = janet.weaver@reqres.in</msg>
+<var>${field_email}</var>
+<arg>${json_response['email']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-27T12:27:11.799839" elapsed="0.000997"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-27T12:27:11.802830" level="INFO">${field_first} = Janet</msg>
+<var>${field_first}</var>
+<arg>${json_response['first_name']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-27T12:27:11.801830" elapsed="0.001000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-27T12:27:11.803825" level="FAIL">Resolving variable '${json_response['last_name']}' failed: KeyError: 'last_name'</msg>
+<var>${field_last}</var>
+<arg>${json_response['last_name']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="FAIL" start="2024-02-27T12:27:11.803825" elapsed="0.001000">Resolving variable '${json_response['last_name']}' failed: KeyError: 'last_name'</status>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${field_id}</arg>
+<arg>${EXPECTED_id}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2024-02-27T12:27:11.805819" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${field_email}</arg>
+<arg>${EXPECTED_email}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2024-02-27T12:27:11.806816" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${field_first}</arg>
+<arg>${EXPECTED_first_name}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2024-02-27T12:27:11.806816" elapsed="0.000998"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${field_last}</arg>
+<arg>${EXPECTED_last_name}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2024-02-27T12:27:11.807814" elapsed="0.000000"/>
+</kw>
+<kw name="Delete All Sessions" owner="RequestsLibrary">
+<doc>Removes all the session objects</doc>
+<status status="NOT RUN" start="2024-02-27T12:27:11.808815" elapsed="0.000000"/>
+</kw>
+<doc>Test POST request to the API</doc>
+<status status="FAIL" start="2024-02-27T12:27:11.108808" elapsed="0.701000">Resolving variable '${json_response['last_name']}' failed: KeyError: 'last_name'</status>
+</test>
+<test id="s1-t6" name="Method-POST-Response-Not-Equals-with-Request" line="127">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-02-27T12:27:11.812801" level="INFO">Creating Session using : alias=Base, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>Base</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-02-27T12:27:11.812801" elapsed="0.001029"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-02-27T12:27:11.814823" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Content-Type</arg>
+<arg>application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-02-27T12:27:11.813830" elapsed="0.000993"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-02-27T12:27:12.387047" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '82'} 
+ body={"id":2,"email":"jane.weaver@reqres.in","first_name":"Janet","last_name":"Weaver"} 
+ </msg>
+<msg time="2024-02-27T12:27:12.387047" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Tue, 27 Feb 2024 05:27:13 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '121', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1709011633&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=qo%2Fb7GoQjCSvPddAMo17B4T%2FC8uans%2Bfi5yYR1S0%2FdM%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1709011633&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=qo%2Fb7GoQjCSvPddAMo17B4T%2FC8uans%2Bfi5yYR1S0%2FdM%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"79-9YOl8d5Yk5GYHcARmjAtGgkCUfo"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '85be0474dc416d04-CGK'} 
+ body={"id":2,"email":"jane.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","createdAt":"2024-02-27T05:27:13.721Z"} 
+ </msg>
+<msg time="2024-02-27T12:27:12.387047" level="INFO">C:\Users\ACER\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg time="2024-02-27T12:27:12.390033" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>Base</arg>
+<arg>/api/users</arg>
+<arg>headers=${headers}</arg>
+<arg>data=${payload4}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-02-27T12:27:11.815344" elapsed="0.574689"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-27T12:27:12.396016" level="INFO">{'id': 2, 'email': 'jane.weaver@reqres.in', 'first_name': 'Janet', 'last_name': 'Weaver', 'createdAt': '2024-02-27T05:27:13.721Z'}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-27T12:27:12.393026" elapsed="0.002990"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-27T12:27:12.398010" level="INFO">${json_response} = {'id': 2, 'email': 'jane.weaver@reqres.in', 'first_name': 'Janet', 'last_name': 'Weaver', 'createdAt': '2024-02-27T05:27:13.721Z'}</msg>
+<var>${json_response}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-27T12:27:12.397012" elapsed="0.000998"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-27T12:27:12.401002" level="INFO">${field_id} = 2</msg>
+<var>${field_id}</var>
+<arg>${json_response['id']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-27T12:27:12.399007" elapsed="0.001995"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-27T12:27:12.401999" level="INFO">${field_email} = jane.weaver@reqres.in</msg>
+<var>${field_email}</var>
+<arg>${json_response['email']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-27T12:27:12.401002" elapsed="0.001994"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-27T12:27:12.404992" level="INFO">${field_first} = Janet</msg>
+<var>${field_first}</var>
+<arg>${json_response['first_name']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-27T12:27:12.402996" elapsed="0.001996"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-27T12:27:12.406987" level="INFO">${field_last} = Weaver</msg>
+<var>${field_last}</var>
+<arg>${json_response['last_name']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-27T12:27:12.405989" elapsed="0.000998"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-02-27T12:27:12.408981" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${field_id}</arg>
+<arg>${EXPECTED_id}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-02-27T12:27:12.408981" elapsed="0.000997"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-02-27T12:27:12.410976" level="FAIL">jane.weaver@reqres.in != janet.weaver@reqres.in</msg>
+<arg>${field_email}</arg>
+<arg>${EXPECTED_email}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="FAIL" start="2024-02-27T12:27:12.409978" elapsed="0.000998">jane.weaver@reqres.in != janet.weaver@reqres.in</status>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${field_first}</arg>
+<arg>${EXPECTED_first_name}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2024-02-27T12:27:12.411973" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${field_last}</arg>
+<arg>${EXPECTED_last_name}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2024-02-27T12:27:12.412969" elapsed="0.000000"/>
+</kw>
+<kw name="Delete All Sessions" owner="RequestsLibrary">
+<doc>Removes all the session objects</doc>
+<status status="NOT RUN" start="2024-02-27T12:27:12.413967" elapsed="0.000000"/>
+</kw>
+<doc>Test POST request to the API</doc>
+<status status="FAIL" start="2024-02-27T12:27:11.811803" elapsed="0.602164">jane.weaver@reqres.in != janet.weaver@reqres.in</status>
+</test>
+<status status="FAIL" start="2024-02-27T12:27:09.152464" elapsed="3.263497"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="2" skip="0" id="s1" name="API">API</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
